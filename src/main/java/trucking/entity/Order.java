@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "order_table")
@@ -14,8 +15,8 @@ public class Order implements Serializable {
 
     private double price;
 
-    @OneToOne
-    private Parcel parcel;
+    @OneToMany
+    private List<Parcel> parcels;
 
     @OneToOne
     private Recipient recipient;
