@@ -4,14 +4,15 @@ import lombok.Data;
 import trucking.entity.enums.ParcelStatus;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @Data
-public class Parcel {
+public class Parcel implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Column(name = "track_number", unique = true)
     private String trackNumber;

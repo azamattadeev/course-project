@@ -4,13 +4,14 @@ import lombok.Data;
 import trucking.entity.enums.TruckingRequestStatus;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Data
-public class TruckingRequest {
+public class TruckingRequest implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     @Column(name = "location_address")
     private String locationAddress;
 

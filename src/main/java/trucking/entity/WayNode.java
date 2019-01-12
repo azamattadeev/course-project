@@ -3,12 +3,13 @@ package trucking.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Data
-public class WayNode {
+public class WayNode implements Serializable {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     @ManyToOne(cascade = CascadeType.ALL)
     private Way way;
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
