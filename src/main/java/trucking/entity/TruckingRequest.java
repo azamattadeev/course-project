@@ -8,8 +8,8 @@ import javax.persistence.*;
 public class TruckingRequest {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column(name = "shipping_addres")
-    private String shippingAddress;
+    @Column(name = "location_address")
+    private String locationAddress;
 
     private double length;
     private double width;
@@ -20,6 +20,9 @@ public class TruckingRequest {
 
     private String locationCountry;
     private String locationCity;
+
+    private String shippingCountry;
+    private String shippingCity;
 
     private double weight;
 
@@ -32,7 +35,12 @@ public class TruckingRequest {
     @Column(name = "customer_name", length = 40)
     private String customerName;
 
-    private String description;
+    private String usersDescription;
+
+    private String workersDescription;
+
+    @ManyToOne
+    private Warehouse orderProcessingOffice;
 
     public TruckingRequest(){}
 
@@ -44,12 +52,28 @@ public class TruckingRequest {
         this.id = id;
     }
 
-    public String getShippingAddress() {
-        return shippingAddress;
+    public String getLocationAddress() {
+        return locationAddress;
     }
 
-    public void setShippingAddress(String shippingAddress) {
-        this.shippingAddress = shippingAddress;
+    public void setLocationAddress(String locationAddress) {
+        this.locationAddress = locationAddress;
+    }
+
+    public String getShippingCountry() {
+        return shippingCountry;
+    }
+
+    public void setShippingCountry(String shippingCountry) {
+        this.shippingCountry = shippingCountry;
+    }
+
+    public String getShippingCity() {
+        return shippingCity;
+    }
+
+    public void setShippingCity(String shippingCity) {
+        this.shippingCity = shippingCity;
     }
 
     public double getLength() {
@@ -108,12 +132,12 @@ public class TruckingRequest {
         this.customerName = customerName;
     }
 
-    public String getDescription() {
-        return description;
+    public String getUsersDescription() {
+        return usersDescription;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setUsersDescription(String usersDescription) {
+        this.usersDescription = usersDescription;
     }
 
     public String getLocationCountry() {
@@ -138,5 +162,21 @@ public class TruckingRequest {
 
     public void setStatus(TruckingRequestStatus status) {
         this.status = status;
+    }
+
+    public String getWorkersDescription() {
+        return workersDescription;
+    }
+
+    public void setWorkersDescription(String workersDescription) {
+        this.workersDescription = workersDescription;
+    }
+
+    public Warehouse getOrderProcessingOffice() {
+        return orderProcessingOffice;
+    }
+
+    public void setOrderProcessingOffice(Warehouse orderProcessingOffice) {
+        this.orderProcessingOffice = orderProcessingOffice;
     }
 }
