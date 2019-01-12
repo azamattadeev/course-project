@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 @Entity
 @Data
-public class Recipient implements Serializable {
+public class Person implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -27,5 +27,5 @@ public class Recipient implements Serializable {
 
     private String email;
 
-    public Recipient() {}
+    public Person() {}
 }

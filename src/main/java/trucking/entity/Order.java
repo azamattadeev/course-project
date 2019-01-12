@@ -19,7 +19,10 @@ public class Order implements Serializable {
     private List<Parcel> parcels;
 
     @OneToOne
-    private Recipient recipient;
+    private Person recipient;
+
+    @OneToOne
+    private Person sender;
 
     public Order() {}
 }
