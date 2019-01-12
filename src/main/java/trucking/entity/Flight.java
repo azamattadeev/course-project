@@ -1,5 +1,6 @@
 package trucking.entity;
 
+import lombok.Data;
 import trucking.entity.enums.FlightStatus;
 
 import javax.persistence.*;
@@ -7,6 +8,7 @@ import java.io.Serializable;
 import java.time.ZonedDateTime;
 
 @Entity
+@Data
 public class Flight implements Serializable {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -26,62 +28,5 @@ public class Flight implements Serializable {
 
     public Flight(){
         full = false;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public Way getWay() {
-        return way;
-    }
-
-    public void setWay(Way way) {
-        this.way = way;
-    }
-
-    public boolean isFull() {
-        return full;
-    }
-
-    public void setFull(boolean full) {
-        this.full = full;
-    }
-
-    public double getSpecificPriceInDollars() {
-        return specificPriceInDollars;
-    }
-
-    public void setSpecificPriceInDollars(double specificPriceInDollars) {
-        this.specificPriceInDollars = specificPriceInDollars;
-    }
-
-    public ZonedDateTime getDepartureTime() {
-        return departureTime;
-    }
-
-    public void setDepartureTime(ZonedDateTime departureTime) {
-        this.departureTime = departureTime;
-    }
-
-    public FlightStatus getStatus() {
-        return status;
-    }
-
-    public void setStatus(FlightStatus status) {
-        this.status = status;
-    }
-
-    @Override
-    public String toString() {
-        return "Flight{" +
-                "way=" + way +
-                ", departureTime=" + departureTime +
-                ", status=" + status +
-                '}';
     }
 }

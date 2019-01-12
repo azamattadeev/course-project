@@ -1,8 +1,11 @@
 package trucking.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
 @Entity
+@Data
 public class Route {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -13,20 +16,4 @@ public class Route {
     private Parcel parcel;
 
     public Route(){}
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public WayNode getFirstWayNode() {
-        return firstWayNode;
-    }
-
-    public void setFirstWayNode(WayNode firstWayNode) {
-        this.firstWayNode = firstWayNode;
-    }
 }

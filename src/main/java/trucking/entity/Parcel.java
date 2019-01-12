@@ -1,13 +1,16 @@
 package trucking.entity;
 
+import lombok.Data;
 import trucking.entity.enums.ParcelStatus;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Data
 public class Parcel {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column(name = "track_number", unique = true)
@@ -42,117 +45,5 @@ public class Parcel {
 
     private String description;
 
-    public Parcel(){}
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public Route getRoute() {
-        return route;
-    }
-
-    public void setRoute(Route route) {
-        this.route = route;
-    }
-
-    public Warehouse getCurrentWarehouse() {
-        return currentWarehouse;
-    }
-
-    public void setCurrentWarehouse(Warehouse currentWarehouse) {
-        this.currentWarehouse = currentWarehouse;
-    }
-
-    public Flight getCurrentFlight() {
-        return currentFlight;
-    }
-
-    public void setCurrentFlight(Flight currentFlight) {
-        this.currentFlight = currentFlight;
-    }
-
-    public boolean isOnTheWay() {
-        return isOnTheWay;
-    }
-
-    public void setOnTheWay(boolean onTheWay) {
-        isOnTheWay = onTheWay;
-    }
-
-    public double getLength() {
-        return length;
-    }
-
-    public void setLength(double length) {
-        this.length = length;
-    }
-
-    public double getWidth() {
-        return width;
-    }
-
-    public void setWidth(double width) {
-        this.width = width;
-    }
-
-    public double getHeight() {
-        return height;
-    }
-
-    public void setHeight(double height) {
-        this.height = height;
-    }
-
-    public double getWeight() {
-        return weight;
-    }
-
-    public void setWeight(double weight) {
-        this.weight = weight;
-    }
-
-    public ParcelStatus getStatus() {
-        return status;
-    }
-
-    public void setStatus(ParcelStatus status) {
-        this.status = status;
-    }
-
-    public Order getOrder() {
-        return order;
-    }
-
-    public void setOrder(Order order) {
-        this.order = order;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getTrackNumber() {
-        return trackNumber;
-    }
-
-    public void setTrackNumber(String trackNumber) {
-        this.trackNumber = trackNumber;
-    }
-
-    public List<Client> getClients() {
-        return clients;
-    }
-
-    public void setClients(List<Client> clients) {
-        this.clients = clients;
-    }
+    public Parcel() {}
 }
