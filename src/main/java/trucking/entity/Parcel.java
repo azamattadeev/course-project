@@ -42,6 +42,9 @@ public class Parcel implements Serializable {
     private ParcelStatus status;
 
     @OneToOne
+    ParcelLocationHistory locationHistory;
+
+    @ManyToOne
     private Order order;
 
     private String description;

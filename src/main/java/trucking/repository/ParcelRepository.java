@@ -8,6 +8,8 @@ import java.util.List;
 
 public interface ParcelRepository extends JpaRepository<Parcel, Long> {
 
+    List<Parcel> findAllByOrder(Order order);
+
     List<Parcel> findAllByCurrentWarehouse(Warehouse warehouse);
 
     List<Parcel> findAllByCurrentFlight(Flight flight);
