@@ -10,8 +10,8 @@ import java.io.Serializable;
 public class Route implements Serializable {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @OneToOne(targetEntity = WayNode.class, cascade = CascadeType.ALL)
-    private WayNode firstWayNode;
+    @OneToOne(targetEntity = RouteNode.class, cascade = CascadeType.ALL)
+    private RouteNode firstWayNode;
 
     @OneToOne(mappedBy = "route")
     private Parcel parcel;

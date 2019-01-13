@@ -7,18 +7,18 @@ import java.io.Serializable;
 
 @Entity
 @Data
-public class WayNode implements Serializable {
+public class RouteNode implements Serializable {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @ManyToOne(cascade = CascadeType.ALL)
-    private Way way;
+    private Flight flight;
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private WayNode nextNode;
+    private RouteNode nextNode;
 
-    public WayNode(){}
+    public RouteNode(){}
 
-    public WayNode(Way way, WayNode nextNode) {
-        this.way = way;
+    public RouteNode(Flight flight, RouteNode nextNode) {
+        this.flight = flight;
         this.nextNode = nextNode;
     }
 }

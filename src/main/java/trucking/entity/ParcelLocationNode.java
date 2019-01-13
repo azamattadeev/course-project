@@ -16,7 +16,7 @@ public class ParcelLocationNode {
 
     private Integer nodeNumber;
 
-    private WayNode wayNode;
+    private RouteNode wayNode;
 
     private ZonedDateTime departureTime;
 
