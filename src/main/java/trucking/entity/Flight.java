@@ -26,6 +26,8 @@ public class Flight implements Serializable {
 
     private FlightStatus status;
 
+    private String phoneNumber;
+
     public Flight(){
         full = false;
     }
