@@ -8,6 +8,7 @@ import java.util.Set;
 
 @Entity
 @Data
+@Table(name = "user_table")
 public class User {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
